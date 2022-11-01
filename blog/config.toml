@@ -1,4 +1,4 @@
-base_url = "https://os.phil-opp.com"
+base_url = "http://blog.testlocal.home"
 
 generate_feed = true
 feed_filename = "rss.xml"

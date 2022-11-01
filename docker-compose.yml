@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  blog:
+    build: 
+      context: ./
+    networks:
+      - net_internal
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.blog.loadbalancer.server.port=80"
+      - "traefik.http.routers.blog.entrypoints=internalweb"
+      - "traefik.http.routers.blog.rule=Host(`blog.testlocal.home`)"
+
+networks:
+  net_internal:
+    external:
+      name: internalnet
